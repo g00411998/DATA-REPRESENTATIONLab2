@@ -1,6 +1,7 @@
+// Import the component used to display the movie list.
 import Movies from './Movies'
 export default function Read() {
-
+// Store the movie details to pass to the Movies component.
     const movies1 = 
        [
   {
@@ -28,6 +29,7 @@ export default function Read() {
     return (
         <div>
             <h1>Read</h1>
+            {/* Pass the movie array to Movies through the mymovies prop. */}
             <Movies mymovies={movies1} />
         </div>
  

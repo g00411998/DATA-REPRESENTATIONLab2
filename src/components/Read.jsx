@@ -12,7 +12,7 @@ export default function Read() {
   useEffect(() => {
     axios.get(MOVIES_URL)
       .then((response) => {
-        setMovies(response.data.movies ?? response.data);
+        setMovies(response.data.myArray ?? response.data.movies ?? response.data);
       })
       .catch(() => {
         setError('Unable to load the movies. Please try again later.');

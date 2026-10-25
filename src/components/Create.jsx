@@ -1,12 +1,14 @@
 import { useState } from "react";
 
 export default function Create() {
+  // Store the values entered into the movie form.
   const [title, setTitle] = useState('');
   const [year, setYear] = useState('');
   const [poster, setPoster] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Log the submitted movie information to the console.
     console.log(title, year, poster);
   }
 
@@ -15,14 +17,17 @@ export default function Create() {
       <h2>This is my Create Component.</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
+          {/* Movie title input control. */}
           <label>Add Movie Title: </label>
           <input type="text" className="form-control" value={title} onChange={(e) => { setTitle(e.target.value) }} />
         </div>
         <div className="form-group">
+          {/* Movie year input control. */}
           <label>Add Movie Year: </label>
           <input type="text" className="form-control" value={year} onChange={(e) => { setYear(e.target.value) }} />
         </div>
         <div className="form-group">
+          {/* Movie poster input control. */}
           <label>Add Movie Poster: </label>
           <textarea type="text" className="form-control" value={poster} onChange={(e) => { setPoster(e.target.value) }} />
         </div>

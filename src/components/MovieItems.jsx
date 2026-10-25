@@ -1,6 +1,7 @@
 import Card from 'react-bootstrap/Card';
 
 export default function MovieItems(props) {
+  // Display the movie title, poster, and release year.
   return (
     <div>
       <Card className="text-center">

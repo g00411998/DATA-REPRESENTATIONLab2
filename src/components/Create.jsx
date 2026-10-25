@@ -1,33 +1,33 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function Create() {
   const [title, setTitle] = useState('');
   const [year, setYear] = useState('');
   const [poster, setPoster] = useState('');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log({ title, year, poster });
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(title, year, poster);
+  }
 
   return (
-    <main className="page-content">
-      <h1>Add a Movie</h1>
-      <form className="movie-form" onSubmit={handleSubmit}>
+    <div className="page-content">
+      <h2>This is my Create Component.</h2>
+      <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="title">Movie Title</label>
-          <input id="title" type="text" value={title} onChange={(event) => setTitle(event.target.value)} required />
+          <label>Add Movie Title: </label>
+          <input type="text" className="form-control" value={title} onChange={(e) => { setTitle(e.target.value) }} />
         </div>
         <div className="form-group">
-          <label htmlFor="year">Movie Year</label>
-          <input id="year" type="number" min="1888" max="2100" value={year} onChange={(event) => setYear(event.target.value)} required />
+          <label>Add Movie Year: </label>
+          <input type="text" className="form-control" value={year} onChange={(e) => { setYear(e.target.value) }} />
         </div>
         <div className="form-group">
-          <label htmlFor="poster">Movie Poster URL</label>
-          <input id="poster" type="url" value={poster} onChange={(event) => setPoster(event.target.value)} required />
+          <label>Add Movie Poster: </label>
+          <textarea type="text" className="form-control" value={poster} onChange={(e) => { setPoster(e.target.value) }} />
         </div>
-        <button type="submit">Add Movie</button>
+        <input type="submit" value="Add Movie" />
       </form>
-    </main>
+    </div>
   );
 }

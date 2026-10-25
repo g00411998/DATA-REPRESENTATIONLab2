@@ -5,29 +5,21 @@ import Movies from './Movies';
 const MOVIES_URL = 'https://data-rep-mern-application.github.io/dataserver/movies.json';
 
 export default function Read() {
-  const [movies, setMovies] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const [myMovies, setMovie] = useState([]);
 
   useEffect(() => {
     axios.get(MOVIES_URL)
       .then((response) => {
-        setMovies(response.data.myArray ?? response.data.movies ?? response.data);
+        console.log(response.data.myArray);
+        setMovie(response.data.myArray);
       })
-      .catch(() => {
-        setError('Unable to load the movies. Please try again later.');
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+      .catch((error) => { console.log(error) });
   }, []);
 
   return (
-    <main className="page-content">
-      <h1>Movies</h1>
-      {loading && <p role="status">Loading movies...</p>}
-      {error && <p className="error-message" role="alert">{error}</p>}
-      {!loading && !error && <Movies mymovies={movies} />}
-    </main>
+    <div className="page-content">
+      <h1>Hello from Read component</h1>
+      <Movies myMovies={myMovies}></Movies>
+    </div>
   );
 }

@@ -5,11 +5,11 @@ export default function MovieItems(props) {
     
 
 
-    <div>
+    <article className="movie-card">
        {/* Display the movie title. */}
         <h3>{props.mymovie.Title}</h3>
         <p>{props.mymovie.Year}</p>
-        <img src={props.mymovie.Poster} alt={props.mymovie.Title}></img> 
-    </div>
+        <img src={props.mymovie.Poster} alt={`${props.mymovie.Title} poster`} />
+    </article>
   )
 }

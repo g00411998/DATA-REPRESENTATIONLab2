@@ -10,7 +10,7 @@ import Read from './components/Read';
 import Create from './components/Create';
 
 
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 function App() {
 
 
@@ -19,10 +19,10 @@ function App() {
       <BrowserRouter>
       <Navbar bg="light" data-bs-theme="light">
         <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Navbar.Brand href="/">Movie Library</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/home">Home</Nav.Link>
-            <Nav.Link href="header">Header</Nav.Link>
+            <Nav.Link href="/header">Header</Nav.Link>
             <Nav.Link href="/footer">Footer</Nav.Link>
             <Nav.Link href="/read">Read</Nav.Link>
             <Nav.Link href="/create">Create</Nav.Link>
